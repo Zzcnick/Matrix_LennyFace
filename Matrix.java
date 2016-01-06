@@ -41,6 +41,29 @@ public class Matrix {
 	return matrix[r][c];
     }
 
+    //return row r
+    public Object[] getRow( int r ) {
+	return matrix[r];
+    }
+
+    //set row r to newRow, return old row
+    public Object[] setRow( int r, Object[] newRow ) {
+	Object[] ret = matrix[r];
+	matrix[r] = newRow;
+	return ret;
+    }
+
+    //return column c
+    public Object[] getCol( int c ) {
+	Object[] ret = Object[size()];
+	for (int i = 0; i<size(); i++) {
+	    ret[i] = get(i,c);
+	}
+	return ret;
+    }
+
+    
+
 
     //return true if all cells are filled, false otherwise
     private boolean isFull() {
