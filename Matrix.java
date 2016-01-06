@@ -42,19 +42,19 @@ public class Matrix {
     }
 
 
-    //return true if this matrix is empty, false otherwise
-    private boolean isEmpty() {
+    //return true if all cells are filled, false otherwise
+    private boolean isFull() {
 	for (int i = 0; i < matrix.length; i++) {
 	    for (int j = 0; j < matrix[i].length; j++) {
-		if (get(i,j) != null) 
+		if (get(i,j) == null) 
 		    return false;
 	    }
 	}
 	return true;
     }
     // return true if a specified cell of the matrix is empty, false otherwise
-    private boolean isEmptyCell( int r, int c ) {
-	return (matrix[r][c] == null);
+    private boolean isEmpty( int r, int c ) {
+	return get(r,c) == null;
     }
 
 
@@ -138,13 +138,13 @@ public class Matrix {
 	Matrix m2 = new Matrix(3);
 	Matrix m3 = new Matrix();
 
-	// toString and size and isEmpty:
+	// toString and size and isFull:
 	System.out.println("Matrix 1: Size " + m1.size() + "\n" + m1);
 	System.out.println("Matrix 2: Size " + m2.size() + "\n" + m2);
-	System.out.println("Matrix 1 empty? " + m1.isEmpty());
-	System.out.println("Matrix 2 empty? " + m2.isEmpty());
-	System.out.println("Cell 0,0 of Matrix 1,2 empty? " + m1.isEmptyCell(0,0)
-			   + "\t" + m2.isEmptyCell(0,0) + "\n");
+	System.out.println("Matrix 1 full? " + m1.isFull());
+	System.out.println("Matrix 2 full? " + m2.isFull());
+	System.out.println("Cell 0,0 of Matrix 1,2 empty? " + m1.isEmpty(0,0)
+			   + "\t" + m2.isEmpty(0,0) + "\n");
 
 	// Populate Matrices:
 	for (int i = 0; i < 2; i++)
