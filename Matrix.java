@@ -160,6 +160,17 @@ public class Matrix {
 	matrix[r2] = old_r1;
     }
 
+    //returns true if matrix contains o, false otherwise
+    public boolean contains( Object o ) {
+	for (int r=0; r<size(); r++){
+	    for (int c=0; c<size(); c++) {
+		if (!isEmpty(c,r) && get(c,r).equals(o)) {
+		    return true;
+		}
+	    }
+	}
+	return false;
+    }
 
     //main method for testing
     public static void main( String[] args ) {
